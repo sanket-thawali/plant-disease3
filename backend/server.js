@@ -5,7 +5,6 @@ import cors from 'cors';
 import diseasesRoutes from './routes/diseases.js';
 import userRoutes from './routes/user.js';
 import mongoose from 'mongoose';
-import { spawn } from 'child_process';
 import axios from 'axios';
 import multer from 'multer';
 import FormData from 'form-data';
@@ -22,20 +21,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Spawn the python prediction server
-const pythonProcess = spawn("python", ["../api/predict_server.py"]);
-
-pythonProcess.stdout.on("data", (data) => {
-  // console.log(`Python stdout: ${data}`);
-});
-
-pythonProcess.stderr.on("data", (data) => {
-  console.error(`Python stderr: ${data}`);
-});
-
-pythonProcess.on("close", (code) => {
-  // console.log(`Python process exited with code ${code}`);
-});
 
 // Setup multer for file upload handling
 const upload = multer();
