@@ -27,7 +27,7 @@ const HomePage = (props) => {
 
   const handleGetStartedClick = () => {
     if (user) {
-      window.open("https://plant-disease-esbbmdl9nmfc6nvpt9h8ti.streamlit.app/", "_blank");
+      window.open("https://plant-disease-ml-n6twjrlm8hruudgel9hs6h.streamlit.app/", "_blank");
       setShowPopup(false);
     } else {
       setShowPopup(true);
@@ -117,4 +117,4 @@ const HomePage = (props) => {
 };
 
 export default HomePage;
-</create_file>
+// </create_file>

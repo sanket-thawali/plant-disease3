@@ -3,7 +3,7 @@ import "../css/DragDrop.css";
 
 const DragDrop = () => {
   const handleClick = () => {
-    window.open("https://plant-disease-esbbmdl9nmfc6nvpt9h8ti.streamlit.app/", "_blank");
+    window.open("https://plant-disease-ml-n6twjrlm8hruudgel9hs6h.streamlit.app/", "_blank");
   };
 
   return (
