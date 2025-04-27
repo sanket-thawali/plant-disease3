@@ -10,10 +10,11 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 import { AuthContext } from "../context/AuthContext";
+import "../css/Popup.css";
 
 const HomePage = (props) => {
   const { user } = useContext(AuthContext);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -27,10 +28,14 @@ const HomePage = (props) => {
   const handleGetStartedClick = () => {
     if (user) {
       window.open("https://plant-disease-esbbmdl9nmfc6nvpt9h8ti.streamlit.app/", "_blank");
-      setErrorMessage("");
+      setShowPopup(false);
     } else {
-      setErrorMessage("Please log in to access this feature.");
+      setShowPopup(true);
     }
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -44,7 +49,6 @@ const HomePage = (props) => {
             The Future of Plant Health is Here
           </p>
           <button onClick={handleGetStartedClick}>Get Started</button>
-          {errorMessage && <p style={{ color: "red", marginTop: "10px" }}>{errorMessage}</p>}
         </div>
         <svg className="arrows">
           <path className="a1" d="M0 0 L15 16 L30 0"></path>
@@ -99,8 +103,18 @@ const HomePage = (props) => {
           </li>
         </ul>
       </section>
+
+      {showPopup && (
+        <div className="popup-backdrop" onClick={closePopup}>
+          <div className="popup-content" onClick={e => e.stopPropagation()}>
+            <p>Please log in to access this feature.</p>
+            <button className="popup-close-button" onClick={closePopup}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default HomePage;
+</create_file>

@@ -205,7 +205,7 @@ const PredictionPage = (props) => {
       if (diseaseDetailsResponse.ok) {
         setPredictedDiseaseData(diseaseDetailsData);
       } else {
-        console.log("Error fetching the data.");
+        // console.log("Error fetching the data.");
         notifyFetchError();
       }
     } catch (error) {
@@ -243,7 +243,7 @@ const PredictionPage = (props) => {
       setHealthy(false);
       setPrediction(true);
     } else {
-      console.log("Error fetching the data.");
+      // console.log("Error fetching the data.");
       notifyFetchError();
     }
   };

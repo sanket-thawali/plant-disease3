@@ -6,14 +6,14 @@ const Disease = require('../models/dieseaeModel')
 // router.use(requireAuth);
 
 router.get('/details/', async (req, res) => {
-    console.log("🟡 /api/diseases/details route hit!");
+    // console.log("🟡 /api/diseases/details route hit!");
     const idName = req.query.name;
-    console.log("🔍 Looking for disease with name:", idName);
+    // console.log("🔍 Looking for disease with name:", idName);
     try {
         const disease = await Disease.findOne({idName: idName});
         
         if (!disease) {
-            console.log("❌ Disease not found for:", idName);
+            // console.log("❌ Disease not found for:", idName);
             return res.status(404).json({ message: 'Disease not found' });
         }
 
