@@ -27,7 +27,7 @@ const HomePage = (props) => {
 
   const handleGetStartedClick = () => {
     if (user) {
-      window.open("https://plant-disease-esbbmdl9nmfc6nvpt9h8ti.streamlit.app/", "_blank");
+      window.open("https://plant-disease-detect-ddncxdyqqzxryamyt72kgm.streamlit.app/", "_blank");
       setShowPopup(false);
     } else {
       setShowPopup(true);
