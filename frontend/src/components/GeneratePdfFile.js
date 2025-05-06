@@ -35,7 +35,7 @@ const MyPdfDocument = (props) => {
     const content = (
         <Page style={styles.page}>
             <View style={{ position: 'absolute', top: '40%', left: '20%' }}>
-                <Text style={{ fontSize: 72, color: 'rgba(0, 0, 0, 0.15)', transform: 'rotate(-45deg)' }}>AgroNexus</Text>
+                <Text style={{ fontSize: 72, color: 'rgba(0, 0, 0, 0.15)', transform: 'rotate(-45deg)' }}>ई-कृषी TECH</Text>
             </View>
             <View style={styles.section}>
                 <Text style={styles.title}>Disease Details Report</Text>
